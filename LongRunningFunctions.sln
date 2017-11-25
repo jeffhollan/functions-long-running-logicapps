@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpToQueueWebhook", "LongR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpToDurable", "HttpToDurable\HttpToDurable.csproj", "{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpToQueueFunction", "HttpToQueueFunction\HttpToQueueFunction.csproj", "{191E1821-D745-4B75-9E11-45E2E4569EF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueFunction", "QueueFunction\QueueFunction.csproj", "{B4D93053-8ADF-47E4-BD7A-63B1C0170951}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{191E1821-D745-4B75-9E11-45E2E4569EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{191E1821-D745-4B75-9E11-45E2E4569EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{191E1821-D745-4B75-9E11-45E2E4569EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{191E1821-D745-4B75-9E11-45E2E4569EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D93053-8ADF-47E4-BD7A-63B1C0170951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D93053-8ADF-47E4-BD7A-63B1C0170951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D93053-8ADF-47E4-BD7A-63B1C0170951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D93053-8ADF-47E4-BD7A-63B1C0170951}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
