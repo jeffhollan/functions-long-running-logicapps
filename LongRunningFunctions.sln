@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongRunningFunctions", "LongRunningFunctions\LongRunningFunctions.csproj", "{4361CBA5-4568-41F1-83D7-FA3932471B8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpToQueueWebhook", "LongRunningFunctions\HttpToQueueWebhook.csproj", "{4361CBA5-4568-41F1-83D7-FA3932471B8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpToDurable", "HttpToDurable\HttpToDurable.csproj", "{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpToQueueFunction", "HttpToQueueFunction\HttpToQueueFunction.csproj", "{191E1821-D745-4B75-9E11-45E2E4569EF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{4361CBA5-4568-41F1-83D7-FA3932471B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4361CBA5-4568-41F1-83D7-FA3932471B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4361CBA5-4568-41F1-83D7-FA3932471B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE5EE3D-6B77-49D2-B1BE-BE15F4CDFF93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191E1821-D745-4B75-9E11-45E2E4569EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191E1821-D745-4B75-9E11-45E2E4569EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191E1821-D745-4B75-9E11-45E2E4569EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191E1821-D745-4B75-9E11-45E2E4569EF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
