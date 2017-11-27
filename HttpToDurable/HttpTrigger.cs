@@ -20,11 +20,17 @@ namespace HttpToDurable
         {
             // Function input comes from the request content.
             ProcessRequest requestData = await req.Content.ReadAsAsync<ProcessRequest>();
+
+            // Starting a new orchestrator with request data
             string instanceId = await starter.StartNewAsync("HttpTrigger_Orchestrator", requestData);
 
             log.Info($"Started orchestration with ID = '{instanceId}'.");
 
             var response =  starter.CreateCheckStatusResponse(req, instanceId);
+
+            // I specify a response interval so the Logic App doesn't check the status
+            // until after 10 seconds has passed. If work will be longer you can change this 
+            // value as needed.
             response.Headers.RetryAfter = new RetryConditionHeaderValue(TimeSpan.FromSeconds(10));
             return response;
         }
@@ -35,7 +41,7 @@ namespace HttpToDurable
         {
             var outputs = new List<string>();
 
-            // Replace "hello" with the name of your Durable Activity Function.
+            // In this case my orchestrator is only calling a single function - HttpTrigger_DoWork
             outputs.Add(await context.CallActivityAsync<string>("HttpTrigger_DoWork", context.GetInput<ProcessRequest>()));
 
             return outputs;
