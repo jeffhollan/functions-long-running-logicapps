@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
@@ -23,7 +24,9 @@ namespace HttpToDurable
 
             log.Info($"Started orchestration with ID = '{instanceId}'.");
 
-            return starter.CreateCheckStatusResponse(req, instanceId);
+            var response =  starter.CreateCheckStatusResponse(req, instanceId);
+            response.Headers.RetryAfter = new RetryConditionHeaderValue(TimeSpan.FromSeconds(10));
+            return response;
         }
 
         [FunctionName("HttpTrigger_Orchestrator")]
@@ -35,7 +38,6 @@ namespace HttpToDurable
             // Replace "hello" with the name of your Durable Activity Function.
             outputs.Add(await context.CallActivityAsync<string>("HttpTrigger_DoWork", context.GetInput<ProcessRequest>()));
 
-            // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
             return outputs;
         }
 
@@ -43,7 +45,7 @@ namespace HttpToDurable
         public static string DoWork([ActivityTrigger] ProcessRequest requestData, TraceWriter log)
         {
             log.Info($"Doing work on data {requestData.data}.");
-            Thread.Sleep(new TimeSpan(0, 3, 0));
+            Thread.Sleep(TimeSpan.FromMinutes(3));
             return "some response data";
         }
     }

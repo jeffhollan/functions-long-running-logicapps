@@ -41,7 +41,7 @@ namespace HttpToQueueWebhook
         public static void Run([QueueTrigger("process")]ProcessRequest item, TraceWriter log)
         {
             log.Info($"C# Queue trigger function processed: {item.data}");
-            Thread.Sleep(new TimeSpan(0, 3, 0));
+            Thread.Sleep(TimeSpan.FromMinutes(3));
             ProcessResponse result = new ProcessResponse { data = "some result data" };
             client.PostAsJsonAsync<ProcessResponse>(item.callbackUrl, result);
         }

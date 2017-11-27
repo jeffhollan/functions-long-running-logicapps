@@ -14,7 +14,7 @@ namespace QueueFunction
             [Queue("response")] out string logicAppResponse)
         {
             log.Info($"got the request from Logic Apps: {logicAppRequest}");
-            Thread.Sleep(new TimeSpan(0, 3, 0));
+            Thread.Sleep(TimeSpan.FromMinutes(3));
             logicAppResponse = "Work Finished";
         }
     }
